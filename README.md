@@ -1,73 +1,88 @@
-# Welcome to your Lovable project
+# Digitale Huisdierenpas
 
-## Project info
+## Overzicht
+Deze webapplicatie biedt een moderne, interactieve digitale huisdierenpas. Gebouwd met de nieuwste webtechnologieën, levert het een prettige gebruikerservaring met soepele animaties en een overzichtelijke, toegankelijke interface. De applicatie maakt het mogelijk om huisdiergegevens, medische dossiers, QR-codes en herinneringen eenvoudig te beheren en te delen.
 
-**URL**: https://lovable.dev/projects/ab6cc799-2385-49db-9428-68687d924643
+## Belangrijkste Functionaliteiten
+- **Interactieve Animaties:** Zachte, moderne animaties met Tailwind CSS en shadcn-ui
+- **Responsief Design:** Geoptimaliseerd voor mobiel, tablet en desktop
+- **Moderne UI Componenten:** Gebouwd met React, shadcn-ui en Tailwind CSS
+- **Snel & Prettig:** Direct laden en vloeiende interacties dankzij Vite
+- **Dynamische Content:** Profielbeheer, medische gegevens, QR-code generatie en herinneringen
+- **Profielfoto:** Upload of plaats een afbeelding in `public/profile-images/profielfoto.jpg` voor gebruik als profielfoto
 
-## How can I edit this code?
+## Technologieën
+- **Frontend:**
+  - React 18
+  - TypeScript
+  - Vite
+  - Tailwind CSS 3
+  - shadcn-ui (Radix UI)
+  - Lucide React Icons
+- **Development Tools:**
+  - Visual Studio Code
+  - Git & GitHub
+  - NPM
 
-There are several ways of editing your application.
+## Installatie
+### Vereisten
+- Node.js (LTS-versie)
+- npm (wordt meegeleverd met Node.js)
 
-**Use Lovable**
+### Stappen
+1. **Kloon de repository**
+   ```sh
+   git clone <JOUW_GIT_URL>
+   cd <JOUW_PROJECTNAAM>
+   ```
+2. **Installeer dependencies**
+   ```sh
+   npm install
+   ```
+3. **Start de ontwikkelserver**
+   ```sh
+   npm run dev
+   ```
+4. **Open je browser op** [http://localhost:5173](http://localhost:5173) (standaard Vite-poort)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ab6cc799-2385-49db-9428-68687d924643) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## Projectstructuur
+```
+project-root/
+├── public/
+│   └── profile-images/      # Profielfoto's (bijv. profielfoto.jpg)
+├── src/
+│   ├── components/          # React componenten (PetProfile, MedicalRecord, QRCodeGenerator, NotificationReminders, ui/)
+│   ├── pages/               # Pagina's (Index.tsx, NotFound.tsx)
+│   ├── styles/              # Globale styles (index.css, App.css)
+│   └── ...
+├── package.json
+├── tailwind.config.ts
+└── ...
 ```
 
-**Edit a file directly in GitHub**
+## Beschikbare Scripts
+| Command         | Beschrijving                        |
+|----------------|-------------------------------------|
+| npm run dev    | Start de ontwikkelserver (Vite)     |
+| npm run build  | Maakt een productie-build           |
+| npm run preview| Preview van productie-build         |
+| npm run lint   | Codekwaliteit controleren (ESLint)  |
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Configuratie
+- **Omgevingsvariabelen:** Voeg toe in `.env` indien nodig
+- **Tailwind CSS:** Configuratie in `tailwind.config.ts`
+- **Vite:** Configuratie in `vite.config.ts`
 
-**Use GitHub Codespaces**
+## Bijdragen
+Bijdragen zijn welkom! Maak gerust een Pull Request aan. Voor grote wijzigingen, open eerst een issue om je voorstel te bespreken.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Licentie
+Dit project is gelicenseerd onder de ISC-licentie.
 
-## What technologies are used for this project?
+## Contact
+Voor vragen of suggesties, open een issue in de GitHub repository.
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/ab6cc799-2385-49db-9428-68687d924643) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Dankwoord
+- shadcn-ui & Radix UI voor de UI-componenten
+- Lucide voor de iconen
+- Alle bijdragers aan dit project
