@@ -16,6 +16,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-retro-pink/10 via-white to-retro-blue/10 relative overflow-hidden">
       {/* Decorative shapes */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-retro-yellow/20 rounded-blob group-hover:animate-bounce animate-float" />
+      <div className="absolute top-40 right-20 w-24 h-24 bg-retro-purple/20 rounded-organic group-hover:animate-bounce animate-float" style={{animationDelay: '1s'}} />
       <div className="absolute top-20 left-10 w-32 h-32 bg-retro-yellow/20 rounded-blob animate-float" />
       <div className="absolute top-40 right-20 w-24 h-24 bg-retro-purple/20 rounded-organic animate-float" style={{animationDelay: '1s'}} />
       <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-retro-green/15 rounded-blob animate-float" style={{animationDelay: '2s'}} />
@@ -84,7 +86,7 @@ const Index = () => {
 
             <Card className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 bg-gradient-to-br from-white to-retro-green/10 rounded-organic overflow-hidden group">
               <CardHeader className="text-center pb-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-retro-red to-retro-pink rounded-blob flex items-center justify-center mx-auto mb-6 group-hover:animate-spin">
+                <div className="w-20 h-20 bg-gradient-to-br from-retro-red to-retro-pink rounded-blob flex items-center justify-center mx-auto mb-6 group-hover:animate-bounce">
                   <Shield className="w-10 h-10 text-white" />
                 </div>
                 <CardTitle className="text-2xl font-serif font-bold text-retro-red">Medisch Dossier</CardTitle>
@@ -98,7 +100,7 @@ const Index = () => {
 
             <Card className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 bg-gradient-to-br from-white to-retro-purple/10 rounded-blob overflow-hidden group">
               <CardHeader className="text-center pb-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-retro-purple to-retro-blue rounded-organic flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse">
+                <div className="w-20 h-20 bg-gradient-to-br from-retro-purple to-retro-blue rounded-organic flex items-center justify-center mx-auto mb-6 group-hover:animate-bounce">
                   <QrCode className="w-10 h-10 text-white" />
                 </div>
                 <CardTitle className="text-2xl font-serif font-bold text-retro-blue">QR-code Delen</CardTitle>
