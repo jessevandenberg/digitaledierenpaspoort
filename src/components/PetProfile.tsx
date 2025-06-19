@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -21,7 +20,7 @@ export const PetProfile = () => {
     color: "Goudblond",
     gender: "Vrouwelijk",
     notes: "Zeer vriendelijk en energiek. Houdt van zwemmen en wandelen in het park.",
-    photo: "/placeholder.svg"
+    photo: "/profile-images/profielfoto.jpg"
   });
 
   const handleSave = () => {
