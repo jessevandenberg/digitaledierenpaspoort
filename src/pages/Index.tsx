@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -51,9 +50,6 @@ const Index = () => {
       <section className="py-20 px-4 relative">
         <div className="container mx-auto text-center max-w-5xl">
           <div className="mb-12">
-            <Badge className="mb-6 bg-retro-yellow text-retro-purple hover:bg-retro-green text-lg px-6 py-2 rounded-blob font-serif animate-bounce">
-              ✨ Nieuw: QR-code functionaliteit beschikbaar
-            </Badge>
             <h2 className="text-5xl md:text-8xl font-serif font-black text-gray-900 mb-8 leading-tight">
               Alle{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-retro-red via-retro-pink to-retro-purple animate-pulse">
