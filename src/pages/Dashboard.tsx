@@ -8,7 +8,7 @@ import { PetProfile } from "@/components/PetProfile";
 import { MedicalRecord } from "@/components/MedicalRecord";
 import { QRCodeGenerator } from "@/components/QRCodeGenerator";
 import { NotificationReminders } from "@/components/NotificationReminders";
-import { Camera, Shield, QrCode, Bell, Heart, ArrowLeft } from "lucide-react";
+import { Camera, Shield, QrCode, Bell, Heart, User } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Dashboard = () => {
@@ -25,11 +25,7 @@ const Dashboard = () => {
       <header className="bg-white/90 backdrop-blur-md border-b-4 border-retro-red sticky top-0 z-50 shadow-lg">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Link to="/" className="flex items-center gap-2 text-retro-purple hover:text-retro-red transition-colors">
-                <ArrowLeft className="w-6 h-6" />
-                <span className="font-serif font-bold">Terug</span>
-              </Link>
+            <Link to="/" className="flex items-center space-x-4 hover:opacity-80 transition-opacity">
               <div className="w-16 h-16 bg-gradient-to-br from-retro-red to-retro-pink rounded-organic flex items-center justify-center animate-pulse-glow">
                 <Heart className="w-8 h-8 text-white animate-float" />
               </div>
@@ -41,7 +37,13 @@ const Dashboard = () => {
                   Beheer alle informatie van uw huisdier op één centrale plek
                 </p>
               </div>
-            </div>
+            </Link>
+            
+            {/* Login Button */}
+            <Button className="bg-gradient-to-r from-retro-purple via-retro-blue to-retro-green hover:from-retro-green hover:via-retro-blue hover:to-retro-purple text-white font-bold text-lg px-8 py-4 rounded-blob transform hover:scale-105 transition-all duration-300 shadow-2xl border-2 border-white/20">
+              <User className="w-5 h-5 mr-2" />
+              Inloggen
+            </Button>
           </div>
         </div>
       </header>
