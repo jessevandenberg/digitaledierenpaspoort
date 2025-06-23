@@ -1,23 +1,15 @@
+
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-import { PetProfile } from "@/components/PetProfile";
-import { MedicalRecord } from "@/components/MedicalRecord";
-import { QRCodeGenerator } from "@/components/QRCodeGenerator";
-import { NotificationReminders } from "@/components/NotificationReminders";
 import { Camera, Shield, Smartphone, Bell, QrCode, Heart, Sparkles, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
-  const [activeTab, setActiveTab] = useState("profile");
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-retro-pink/10 via-white to-retro-blue/10 relative overflow-hidden">
       {/* Decorative shapes */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-retro-yellow/20 rounded-blob group-hover:animate-bounce animate-float" />
-      <div className="absolute top-40 right-20 w-24 h-24 bg-retro-purple/20 rounded-organic group-hover:animate-bounce animate-float" style={{animationDelay: '1s'}} />
       <div className="absolute top-20 left-10 w-32 h-32 bg-retro-yellow/20 rounded-blob animate-float" />
       <div className="absolute top-40 right-20 w-24 h-24 bg-retro-purple/20 rounded-organic animate-float" style={{animationDelay: '1s'}} />
       <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-retro-green/15 rounded-blob animate-float" style={{animationDelay: '2s'}} />
@@ -41,9 +33,11 @@ const Index = () => {
                 </p>
               </div>
             </div>
-            <Button className="bg-gradient-to-r from-retro-red via-retro-pink to-retro-purple hover:from-retro-purple hover:to-retro-red text-white font-bold text-lg px-8 py-3 rounded-organic transform hover:scale-105 transition-all duration-300 shadow-2xl">
-              Profiel Aanmaken
-            </Button>
+            <Link to="/dashboard">
+              <Button className="bg-gradient-to-r from-retro-red via-retro-pink to-retro-purple hover:from-retro-purple hover:to-retro-red text-white font-bold text-lg px-8 py-3 rounded-organic transform hover:scale-105 transition-all duration-300 shadow-2xl">
+                Log in
+              </Button>
+            </Link>
           </div>
         </div>
       </header>
@@ -112,67 +106,18 @@ const Index = () => {
               </CardContent>
             </Card>
           </div>
-        </div>
-      </section>
 
-      {/* Main Application */}
-      <section className="py-16 px-4 relative">
-        <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-12">
-            <h3 className="text-4xl md:text-6xl font-serif font-black text-gray-900 mb-6 bg-gradient-to-r from-retro-purple to-retro-blue bg-clip-text text-transparent">
-              Uw Huisdierenpas Dashboard
-            </h3>
-            <p className="text-xl text-gray-600 font-medium">Beheer alle informatie van uw huisdier op één centrale plek</p>
+          {/* Call to Action */}
+          <div className="text-center">
+            <Link to="/dashboard">
+              <Button className="bg-gradient-to-r from-retro-red via-retro-pink to-retro-purple hover:from-retro-purple hover:to-retro-red text-white font-bold text-2xl px-12 py-6 rounded-blob transform hover:scale-105 transition-all duration-300 shadow-3xl mb-4">
+                Log in
+              </Button>
+            </Link>
+            <p className="text-lg text-gray-600 font-medium">
+              Begin vandaag nog met het digitaliseren van uw huisdiergegevens
+            </p>
           </div>
-
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-4 mb-12 bg-white/80 backdrop-blur-md border-4 border-retro-yellow p-2 rounded-blob shadow-2xl h-20">
-              <TabsTrigger 
-                value="profile" 
-                className="flex items-center gap-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-retro-red data-[state=active]:to-retro-pink data-[state=active]:text-white font-bold text-lg rounded-organic transition-all duration-300 hover:scale-105"
-              >
-                <Camera className="w-6 h-6" />
-                <span className="hidden sm:inline font-serif">Profiel</span>
-              </TabsTrigger>
-              <TabsTrigger 
-                value="medical"
-                className="flex items-center gap-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-retro-green data-[state=active]:to-retro-blue data-[state=active]:text-white font-bold text-lg rounded-blob transition-all duration-300 hover:scale-105"
-              >
-                <Shield className="w-6 h-6" />
-                <span className="hidden sm:inline font-serif">Medisch</span>
-              </TabsTrigger>
-              <TabsTrigger 
-                value="qr"
-                className="flex items-center gap-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-retro-purple data-[state=active]:to-retro-pink data-[state=active]:text-white font-bold text-lg rounded-organic transition-all duration-300 hover:scale-105"
-              >
-                <QrCode className="w-6 h-6" />
-                <span className="hidden sm:inline font-serif">QR-code</span>
-              </TabsTrigger>
-              <TabsTrigger 
-                value="reminders"
-                className="flex items-center gap-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-retro-yellow data-[state=active]:to-retro-green data-[state=active]:text-white font-bold text-lg rounded-blob transition-all duration-300 hover:scale-105"
-              >
-                <Bell className="w-6 h-6" />
-                <span className="hidden sm:inline font-serif">Herinneringen</span>
-              </TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="profile" className="space-y-8 animate-fade-in">
-              <PetProfile />
-            </TabsContent>
-
-            <TabsContent value="medical" className="space-y-8 animate-fade-in">
-              <MedicalRecord />
-            </TabsContent>
-
-            <TabsContent value="qr" className="space-y-8 animate-fade-in">
-              <QRCodeGenerator />
-            </TabsContent>
-
-            <TabsContent value="reminders" className="space-y-8 animate-fade-in">
-              <NotificationReminders />
-            </TabsContent>
-          </Tabs>
         </div>
       </section>
 
