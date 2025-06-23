@@ -40,10 +40,12 @@ const Dashboard = () => {
             </Link>
             
             {/* Login Button */}
-            <Button className="bg-gradient-to-r from-retro-purple via-retro-blue to-retro-green hover:from-retro-green hover:via-retro-blue hover:to-retro-purple text-white font-bold text-lg px-8 py-4 rounded-blob transform hover:scale-105 transition-all duration-300 shadow-2xl border-2 border-white/20">
-              <User className="w-5 h-5 mr-2" />
-              Inloggen
-            </Button>
+            <Link to="/login">
+              <Button className="bg-gradient-to-r from-retro-purple via-retro-blue to-retro-green hover:from-retro-green hover:via-retro-blue hover:to-retro-purple text-white font-bold text-lg px-8 py-4 rounded-blob transform hover:scale-105 transition-all duration-300 shadow-2xl border-2 border-white/20">
+                <User className="w-5 h-5 mr-2" />
+                Inloggen
+              </Button>
+            </Link>
           </div>
         </div>
       </header>

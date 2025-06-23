@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -33,7 +32,7 @@ const Index = () => {
                 </p>
               </div>
             </div>
-            <Link to="/dashboard">
+            <Link to="/login">
               <Button className="bg-gradient-to-r from-retro-red via-retro-pink to-retro-purple hover:from-retro-purple hover:to-retro-red text-white font-bold text-lg px-8 py-3 rounded-organic transform hover:scale-105 transition-all duration-300 shadow-2xl">
                 Log in
               </Button>
@@ -73,7 +72,7 @@ const Index = () => {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-gray-700 text-lg leading-relaxed">
-                  Foto, naam, ras, chipnummer en alle basisgegevens overzichtelijk opgeslagen
+                  Foto, naam, ras, chipnummer en alle basisgegevens opgeslagen
                 </CardDescription>
               </CardContent>
             </Card>
@@ -109,7 +108,7 @@ const Index = () => {
 
           {/* Call to Action */}
           <div className="text-center">
-            <Link to="/dashboard">
+            <Link to="/login">
               <Button className="bg-gradient-to-r from-retro-red via-retro-pink to-retro-purple hover:from-retro-purple hover:to-retro-red text-white font-bold text-2xl px-12 py-6 rounded-blob transform hover:scale-105 transition-all duration-300 shadow-3xl mb-4">
                 Log in
               </Button>
