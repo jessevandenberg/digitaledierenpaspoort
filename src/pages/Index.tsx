@@ -1,11 +1,19 @@
+
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Separator } from "@/components/ui/separator";
+import { PetProfile } from "@/components/PetProfile";
+import { MedicalRecord } from "@/components/MedicalRecord";
+import { QRCodeGenerator } from "@/components/QRCodeGenerator";
+import { NotificationReminders } from "@/components/NotificationReminders";
 import { Camera, Shield, Smartphone, Bell, QrCode, Heart, Sparkles, Zap } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const Index = () => {
+  const [activeTab, setActiveTab] = useState("profile");
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-retro-pink/10 via-white to-retro-blue/10 relative overflow-hidden">
       {/* Decorative shapes */}
@@ -95,14 +103,69 @@ const Index = () => {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
 
-          <div className="text-center">
-            <Link to="/dashboard">
-              <Button className="bg-gradient-to-r from-retro-red via-retro-pink to-retro-purple hover:from-retro-purple hover:to-retro-red text-white font-bold text-2xl px-12 py-6 rounded-blob transform hover:scale-105 transition-all duration-300 shadow-3xl mb-4">
-                Start Dashboard
-              </Button>
-            </Link>
+      {/* Dashboard Section */}
+      <section className="py-16 px-4 relative">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-12">
+            <h3 className="text-4xl font-serif font-bold text-gray-900 mb-4">
+              Beheer Uw Huisdier
+            </h3>
+            <p className="text-xl text-gray-600">
+              Gebruik de tabs hieronder om alle informatie van uw huisdier te beheren
+            </p>
           </div>
+
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+            <TabsList className="grid w-full grid-cols-4 mb-12 bg-white/80 backdrop-blur-md border-4 border-retro-yellow p-2 rounded-blob shadow-2xl h-20">
+              <TabsTrigger 
+                value="profile" 
+                className="flex items-center gap-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-retro-red data-[state=active]:to-retro-pink data-[state=active]:text-white font-bold text-lg rounded-organic transition-all duration-300 hover:scale-105"
+              >
+                <Camera className="w-6 h-6" />
+                <span className="hidden sm:inline font-serif">Profiel</span>
+              </TabsTrigger>
+              <TabsTrigger 
+                value="medical"
+                className="flex items-center gap-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-retro-green data-[state=active]:to-retro-blue data-[state=active]:text-white font-bold text-lg rounded-blob transition-all duration-300 hover:scale-105"
+              >
+                <Shield className="w-6 h-6" />
+                <span className="hidden sm:inline font-serif">Medisch</span>
+              </TabsTrigger>
+              <TabsTrigger 
+                value="qr"
+                className="flex items-center gap-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-retro-purple data-[state=active]:to-retro-pink data-[state=active]:text-white font-bold text-lg rounded-organic transition-all duration-300 hover:scale-105"
+              >
+                <QrCode className="w-6 h-6" />
+                <span className="hidden sm:inline font-serif">QR-code</span>
+              </TabsTrigger>
+              <TabsTrigger 
+                value="reminders"
+                className="flex items-center gap-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-retro-yellow data-[state=active]:to-retro-green data-[state=active]:text-white font-bold text-lg rounded-blob transition-all duration-300 hover:scale-105"
+              >
+                <Bell className="w-6 h-6" />
+                <span className="hidden sm:inline font-serif">Herinneringen</span>
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="profile" className="space-y-8 animate-fade-in">
+              <PetProfile />
+            </TabsContent>
+
+            <TabsContent value="medical" className="space-y-8 animate-fade-in">
+              <MedicalRecord />
+            </TabsContent>
+
+            <TabsContent value="qr" className="space-y-8 animate-fade-in">
+              <QRCodeGenerator />
+            </TabsContent>
+
+            <TabsContent value="reminders" className="space-y-8 animate-fade-in">
+              <NotificationReminders />
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
 
