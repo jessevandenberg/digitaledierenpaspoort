@@ -4,7 +4,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Camera, Shield, Smartphone, Bell, QrCode, Heart, Sparkles, Zap } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -17,27 +16,20 @@ const Index = () => {
       {/* Header */}
       <header className="bg-white/90 backdrop-blur-md border-b-4 border-retro-red sticky top-0 z-50 shadow-lg">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-retro-red to-retro-pink rounded-organic flex items-center justify-center animate-pulse-glow">
-                <Heart className="w-8 h-8 text-white animate-float" />
-              </div>
-              <div>
-                <h1 className="text-3xl font-serif font-bold text-gray-900 bg-gradient-to-r from-retro-red to-retro-purple bg-clip-text text-transparent">
-                  Digitale Huisdierenpas
-                </h1>
-                <p className="text-lg text-gray-600 font-medium flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-retro-yellow" />
-                  Veilig • Overzichtelijk • Toegankelijk
-                  <Zap className="w-4 h-4 text-retro-blue" />
-                </p>
-              </div>
+          <div className="flex items-center justify-center space-x-4">
+            <div className="w-16 h-16 bg-gradient-to-br from-retro-red to-retro-pink rounded-organic flex items-center justify-center animate-pulse-glow">
+              <Heart className="w-8 h-8 text-white animate-float" />
             </div>
-            <Link to="/login">
-              <Button className="bg-gradient-to-r from-retro-red via-retro-pink to-retro-purple hover:from-retro-purple hover:to-retro-red text-white font-bold text-lg px-8 py-3 rounded-organic transform hover:scale-105 transition-all duration-300 shadow-2xl">
-                Log in
-              </Button>
-            </Link>
+            <div>
+              <h1 className="text-3xl font-serif font-bold text-gray-900 bg-gradient-to-r from-retro-red to-retro-purple bg-clip-text text-transparent">
+                Digitale Huisdierenpas
+              </h1>
+              <p className="text-lg text-gray-600 font-medium flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-retro-yellow" />
+                Veilig • Overzichtelijk • Toegankelijk
+                <Zap className="w-4 h-4 text-retro-blue" />
+              </p>
+            </div>
           </div>
         </div>
       </header>
@@ -102,14 +94,6 @@ const Index = () => {
                 </CardDescription>
               </CardContent>
             </Card>
-          </div>
-
-          <div className="text-center">
-            <Link to="/login">
-              <Button className="bg-gradient-to-r from-retro-red via-retro-pink to-retro-purple hover:from-retro-purple hover:to-retro-red text-white font-bold text-2xl px-12 py-6 rounded-blob transform hover:scale-105 transition-all duration-300 shadow-3xl mb-4">
-                Log in
-              </Button>
-            </Link>
           </div>
         </div>
       </section>
