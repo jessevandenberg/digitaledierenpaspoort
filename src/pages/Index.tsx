@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -42,87 +43,73 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-12 px-2 md:py-20 md:px-4 w-screen max-w-none overflow-x-hidden min-h-[32rem] md:pl-12">
-        <div className="flex flex-col md:flex-row items-center md:items-stretch w-full h-full gap-8 md:gap-0">
-          {/* Linkerkolom: tekst en features */}
-          <div className="flex-1 flex flex-col justify-center md:pr-12 max-w-7xl mx-auto w-full">
-            <div className="mb-10 md:mb-16">
-              <h2 className="text-5xl md:text-8xl font-serif font-black text-gray-900 mb-8 leading-tight">
-                Alle{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-retro-red via-retro-pink to-retro-purple animate-pulse">
-                  huisdiergegevens
-                </span>
-                <br />
-                op één plek
-              </h2>
-              <p className="text-2xl text-gray-700 mb-12 leading-relaxed font-medium max-w-4xl md:max-w-xl">
-                Bewaar, beheer en deel belangrijke informatie over je huisdier{" "}
-                <span className="font-bold text-retro-purple">veilig</span> en{" "}
-                <span className="font-bold text-retro-blue">eenvoudig</span>.
-                Van vaccinaties tot noodcontacten - alles binnen handbereik.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <Card className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 bg-gradient-to-br from-white to-retro-yellow/10 rounded-blob overflow-hidden group">
-                <CardHeader className="text-center pb-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-retro-blue to-retro-green rounded-organic flex items-center justify-center mx-auto mb-6 group-hover:animate-bounce">
-                    <Camera className="w-10 h-10 text-white" />
-                  </div>
-                  <CardTitle className="text-2xl font-serif font-bold text-retro-purple">Compleet Profiel</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-700 text-lg leading-relaxed">
-                    Foto, naam, ras, chipnummer en alle basisgegevens opgeslagen
-                  </CardDescription>
-                </CardContent>
-              </Card>
-              <Card className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 bg-gradient-to-br from-white to-retro-green/10 rounded-organic overflow-hidden group">
-                <CardHeader className="text-center pb-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-retro-red to-retro-pink rounded-blob flex items-center justify-center mx-auto mb-6 group-hover:animate-bounce">
-                    <Shield className="w-10 h-10 text-white" />
-                  </div>
-                  <CardTitle className="text-2xl font-serif font-bold text-retro-red">Medisch Dossier</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-700 text-lg leading-relaxed">
-                    Vaccinaties, allergieën en behandelingen digitaal bijhouden
-                  </CardDescription>
-                </CardContent>
-              </Card>
-              <Card className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 bg-gradient-to-br from-white to-retro-purple/10 rounded-blob overflow-hidden group">
-                <CardHeader className="text-center pb-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-retro-purple to-retro-blue rounded-organic flex items-center justify-center mx-auto mb-6 group-hover:animate-bounce">
-                    <QrCode className="w-10 h-10 text-white" />
-                  </div>
-                  <CardTitle className="text-2xl font-serif font-bold text-retro-blue">QR-code Delen</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-700 text-lg leading-relaxed">
-                    Snelle toegang tot noodgegevens voor dierenartsen en oppassers
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </div>
-            <div className="text-center md:text-left">
-              <Link to="/login">
-                <Button className="bg-gradient-to-r from-retro-red via-retro-pink to-retro-purple hover:from-retro-purple hover:to-retro-red text-white font-bold text-2xl px-12 py-6 rounded-blob transform hover:scale-105 transition-all duration-300 shadow-3xl mb-4">
-                  Log in
-                </Button>
-              </Link>
-              <p className="text-lg text-gray-600 font-medium">
-                
-              </p>
-            </div>
+      <section className="py-12 px-4 md:py-20 w-full">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-8xl font-serif font-black text-gray-900 mb-8 leading-tight">
+              Alle{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-retro-red via-retro-pink to-retro-purple animate-pulse">
+                huisdiergegevens
+              </span>
+              <br />
+              op één plek
+            </h2>
+            <p className="text-2xl text-gray-700 mb-12 leading-relaxed font-medium max-w-4xl mx-auto">
+              Bewaar, beheer en deel belangrijke informatie over je huisdier{" "}
+              <span className="font-bold text-retro-purple">veilig</span> en{" "}
+              <span className="font-bold text-retro-blue">eenvoudig</span>.
+              Van vaccinaties tot noodcontacten - alles binnen handbereik.
+            </p>
           </div>
-          {/* Rechterkolom: afbeelding */}
-          <div className="flex justify-end items-center w-full md:w-auto md:max-w-none md:mr-[-2rem]">
-            <img
-              src="/images/hond.png"
-              alt="Vrolijke hond kijkt nieuwsgierig naar de bezoeker"
-              aria-label="Decoratieve afbeelding van een hond"
-              className="w-full md:w-[44rem] h-auto drop-shadow-2xl rounded-3xl"
-              tabIndex={0}
-            />
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <Card className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 bg-gradient-to-br from-white to-retro-yellow/10 rounded-blob overflow-hidden group">
+              <CardHeader className="text-center pb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-retro-blue to-retro-green rounded-organic flex items-center justify-center mx-auto mb-6 group-hover:animate-bounce">
+                  <Camera className="w-10 h-10 text-white" />
+                </div>
+                <CardTitle className="text-2xl font-serif font-bold text-retro-purple">Compleet Profiel</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-gray-700 text-lg leading-relaxed">
+                  Foto, naam, ras, chipnummer en alle basisgegevens opgeslagen
+                </CardDescription>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 bg-gradient-to-br from-white to-retro-green/10 rounded-organic overflow-hidden group">
+              <CardHeader className="text-center pb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-retro-red to-retro-pink rounded-blob flex items-center justify-center mx-auto mb-6 group-hover:animate-bounce">
+                  <Shield className="w-10 h-10 text-white" />
+                </div>
+                <CardTitle className="text-2xl font-serif font-bold text-retro-red">Medisch Dossier</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-gray-700 text-lg leading-relaxed">
+                  Vaccinaties, allergieën en behandelingen digitaal bijhouden
+                </CardDescription>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 bg-gradient-to-br from-white to-retro-purple/10 rounded-blob overflow-hidden group">
+              <CardHeader className="text-center pb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-retro-purple to-retro-blue rounded-organic flex items-center justify-center mx-auto mb-6 group-hover:animate-bounce">
+                  <QrCode className="w-10 h-10 text-white" />
+                </div>
+                <CardTitle className="text-2xl font-serif font-bold text-retro-blue">QR-code Delen</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-gray-700 text-lg leading-relaxed">
+                  Snelle toegang tot noodgegevens voor dierenartsen en oppassers
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Link to="/login">
+              <Button className="bg-gradient-to-r from-retro-red via-retro-pink to-retro-purple hover:from-retro-purple hover:to-retro-red text-white font-bold text-2xl px-12 py-6 rounded-blob transform hover:scale-105 transition-all duration-300 shadow-3xl mb-4">
+                Log in
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
