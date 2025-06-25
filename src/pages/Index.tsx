@@ -1,19 +1,10 @@
 
-import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Separator } from "@/components/ui/separator";
-import { PetProfile } from "@/components/PetProfile";
-import { MedicalRecord } from "@/components/MedicalRecord";
-import { QRCodeGenerator } from "@/components/QRCodeGenerator";
-import { NotificationReminders } from "@/components/NotificationReminders";
-import { Camera, Shield, Smartphone, Bell, QrCode, Heart, Sparkles, Zap } from "lucide-react";
+import { Camera, Shield, Smartphone, Bell, QrCode, Heart, Sparkles, Zap, User, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
-  const [activeTab, setActiveTab] = useState("profile");
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-retro-pink/10 via-white to-retro-blue/10 relative overflow-hidden">
       {/* Decorative shapes */}
@@ -24,19 +15,37 @@ const Index = () => {
       {/* Header */}
       <header className="bg-white/90 backdrop-blur-md border-b-4 border-retro-red sticky top-0 z-50 shadow-lg">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-center space-x-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-retro-red to-retro-pink rounded-organic flex items-center justify-center animate-pulse-glow">
-              <Heart className="w-8 h-8 text-white animate-float" />
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-retro-red to-retro-pink rounded-organic flex items-center justify-center animate-pulse-glow">
+                <Heart className="w-8 h-8 text-white animate-float" />
+              </div>
+              <div>
+                <h1 className="text-3xl font-serif font-bold text-gray-900 bg-gradient-to-r from-retro-red to-retro-purple bg-clip-text text-transparent">
+                  Digitale Huisdierenpas
+                </h1>
+                <p className="text-lg text-gray-600 font-medium flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-retro-yellow" />
+                  Veilig • Overzichtelijk • Toegankelijk
+                  <Zap className="w-4 h-4 text-retro-blue" />
+                </p>
+              </div>
             </div>
-            <div>
-              <h1 className="text-3xl font-serif font-bold text-gray-900 bg-gradient-to-r from-retro-red to-retro-purple bg-clip-text text-transparent">
-                Digitale Huisdierenpas
-              </h1>
-              <p className="text-lg text-gray-600 font-medium flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-retro-yellow" />
-                Veilig • Overzichtelijk • Toegankelijk
-                <Zap className="w-4 h-4 text-retro-blue" />
-              </p>
+            
+            {/* Navigation Buttons */}
+            <div className="flex gap-4">
+              <Link to="/dashboard">
+                <Button className="bg-gradient-to-r from-retro-blue to-retro-green hover:from-retro-green hover:to-retro-blue text-white font-bold text-lg px-6 py-3 rounded-blob transform hover:scale-105 transition-all duration-300 shadow-xl border-2 border-white/20">
+                  <ArrowRight className="w-5 h-5 mr-2" />
+                  Dashboard
+                </Button>
+              </Link>
+              <Link to="/login">
+                <Button className="bg-gradient-to-r from-retro-purple via-retro-blue to-retro-green hover:from-retro-green hover:via-retro-blue hover:to-retro-purple text-white font-bold text-lg px-6 py-3 rounded-blob transform hover:scale-105 transition-all duration-300 shadow-xl border-2 border-white/20">
+                  <User className="w-5 h-5 mr-2" />
+                  Inloggen
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -45,25 +54,58 @@ const Index = () => {
       {/* Hero Section */}
       <section className="py-12 px-4 md:py-20 w-full">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-8xl font-serif font-black text-gray-900 mb-8 leading-tight">
-              Alle{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-retro-red via-retro-pink to-retro-purple animate-pulse">
-                huisdiergegevens
-              </span>
-              <br />
-              op één plek
-            </h2>
-            <p className="text-2xl text-gray-700 mb-12 leading-relaxed font-medium max-w-4xl mx-auto">
-              Bewaar, beheer en deel belangrijke informatie over je huisdier{" "}
-              <span className="font-bold text-retro-purple">veilig</span> en{" "}
-              <span className="font-bold text-retro-blue">eenvoudig</span>.
-              Van vaccinaties tot noodcontacten - alles binnen handbereik.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            {/* Left side - Text content */}
+            <div>
+              <h2 className="text-5xl md:text-7xl font-serif font-black text-gray-900 mb-8 leading-tight">
+                Alle{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-retro-red via-retro-pink to-retro-purple animate-pulse">
+                  huisdiergegevens
+                </span>
+                <br />
+                op één plek
+              </h2>
+              <p className="text-2xl text-gray-700 mb-12 leading-relaxed font-medium">
+                Bewaar, beheer en deel belangrijke informatie over je huisdier{" "}
+                <span className="font-bold text-retro-purple">veilig</span> en{" "}
+                <span className="font-bold text-retro-blue">eenvoudig</span>.
+                Van vaccinaties tot noodcontacten - alles binnen handbereik.
+              </p>
+              
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6">
+                <Link to="/dashboard">
+                  <Button className="bg-gradient-to-r from-retro-red to-retro-pink hover:from-retro-pink hover:to-retro-red text-white font-bold text-xl px-10 py-6 rounded-blob transform hover:scale-105 transition-all duration-300 shadow-2xl border-4 border-white/30 w-full sm:w-auto">
+                    <ArrowRight className="w-6 h-6 mr-3" />
+                    Start Dashboard
+                  </Button>
+                </Link>
+                <Link to="/login">
+                  <Button variant="outline" className="border-4 border-retro-purple text-retro-purple hover:bg-retro-purple hover:text-white font-bold text-xl px-10 py-6 rounded-organic transform hover:scale-105 transition-all duration-300 shadow-xl w-full sm:w-auto">
+                    <User className="w-6 h-6 mr-3" />
+                    Inloggen
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            
+            {/* Right side - Dog image */}
+            <div className="relative">
+              <div className="relative z-10 transform hover:scale-105 transition-all duration-500">
+                <img 
+                  src="/images/hond.png" 
+                  alt="Schattige hond" 
+                  className="w-full max-w-lg mx-auto rounded-blob shadow-3xl border-8 border-white/50 backdrop-blur-sm"
+                />
+              </div>
+              {/* Decorative elements around the image */}
+              <div className="absolute -top-8 -right-8 w-24 h-24 bg-retro-yellow/30 rounded-organic animate-float" />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-retro-pink/20 rounded-blob animate-float" style={{animationDelay: '1.5s'}} />
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <Card className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 bg-gradient-to-br from-white to-retro-yellow/10 rounded-blob overflow-hidden group">
+            <Card className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-gradient-to-br from-white to-retro-yellow/10 rounded-blob overflow-hidden group">
               <CardHeader className="text-center pb-6">
                 <div className="w-20 h-20 bg-gradient-to-br from-retro-blue to-retro-green rounded-organic flex items-center justify-center mx-auto mb-6 group-hover:animate-bounce">
                   <Camera className="w-10 h-10 text-white" />
@@ -76,7 +118,7 @@ const Index = () => {
                 </CardDescription>
               </CardContent>
             </Card>
-            <Card className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 bg-gradient-to-br from-white to-retro-green/10 rounded-organic overflow-hidden group">
+            <Card className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-gradient-to-br from-white to-retro-green/10 rounded-organic overflow-hidden group">
               <CardHeader className="text-center pb-6">
                 <div className="w-20 h-20 bg-gradient-to-br from-retro-red to-retro-pink rounded-blob flex items-center justify-center mx-auto mb-6 group-hover:animate-bounce">
                   <Shield className="w-10 h-10 text-white" />
@@ -89,7 +131,7 @@ const Index = () => {
                 </CardDescription>
               </CardContent>
             </Card>
-            <Card className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110 bg-gradient-to-br from-white to-retro-purple/10 rounded-blob overflow-hidden group">
+            <Card className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-gradient-to-br from-white to-retro-purple/10 rounded-blob overflow-hidden group">
               <CardHeader className="text-center pb-6">
                 <div className="w-20 h-20 bg-gradient-to-br from-retro-purple to-retro-blue rounded-organic flex items-center justify-center mx-auto mb-6 group-hover:animate-bounce">
                   <QrCode className="w-10 h-10 text-white" />
@@ -103,69 +145,6 @@ const Index = () => {
               </CardContent>
             </Card>
           </div>
-        </div>
-      </section>
-
-      {/* Dashboard Section */}
-      <section className="py-16 px-4 relative">
-        <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-12">
-            <h3 className="text-4xl font-serif font-bold text-gray-900 mb-4">
-              Beheer Uw Huisdier
-            </h3>
-            <p className="text-xl text-gray-600">
-              Gebruik de tabs hieronder om alle informatie van uw huisdier te beheren
-            </p>
-          </div>
-
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-4 mb-12 bg-white/80 backdrop-blur-md border-4 border-retro-yellow p-2 rounded-blob shadow-2xl h-20">
-              <TabsTrigger 
-                value="profile" 
-                className="flex items-center gap-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-retro-red data-[state=active]:to-retro-pink data-[state=active]:text-white font-bold text-lg rounded-organic transition-all duration-300 hover:scale-105"
-              >
-                <Camera className="w-6 h-6" />
-                <span className="hidden sm:inline font-serif">Profiel</span>
-              </TabsTrigger>
-              <TabsTrigger 
-                value="medical"
-                className="flex items-center gap-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-retro-green data-[state=active]:to-retro-blue data-[state=active]:text-white font-bold text-lg rounded-blob transition-all duration-300 hover:scale-105"
-              >
-                <Shield className="w-6 h-6" />
-                <span className="hidden sm:inline font-serif">Medisch</span>
-              </TabsTrigger>
-              <TabsTrigger 
-                value="qr"
-                className="flex items-center gap-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-retro-purple data-[state=active]:to-retro-pink data-[state=active]:text-white font-bold text-lg rounded-organic transition-all duration-300 hover:scale-105"
-              >
-                <QrCode className="w-6 h-6" />
-                <span className="hidden sm:inline font-serif">QR-code</span>
-              </TabsTrigger>
-              <TabsTrigger 
-                value="reminders"
-                className="flex items-center gap-3 data-[state=active]:bg-gradient-to-r data-[state=active]:from-retro-yellow data-[state=active]:to-retro-green data-[state=active]:text-white font-bold text-lg rounded-blob transition-all duration-300 hover:scale-105"
-              >
-                <Bell className="w-6 h-6" />
-                <span className="hidden sm:inline font-serif">Herinneringen</span>
-              </TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="profile" className="space-y-8 animate-fade-in">
-              <PetProfile />
-            </TabsContent>
-
-            <TabsContent value="medical" className="space-y-8 animate-fade-in">
-              <MedicalRecord />
-            </TabsContent>
-
-            <TabsContent value="qr" className="space-y-8 animate-fade-in">
-              <QRCodeGenerator />
-            </TabsContent>
-
-            <TabsContent value="reminders" className="space-y-8 animate-fade-in">
-              <NotificationReminders />
-            </TabsContent>
-          </Tabs>
         </div>
       </section>
 
